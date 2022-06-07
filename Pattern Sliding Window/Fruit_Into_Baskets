@@ -1,0 +1,20 @@
+        l = 0
+        r = 0
+        typeoffruit = 0
+        arr = []
+        maxop = 0
+        for r in range(len(fruits)):
+            to_add = fruits[r]
+            if to_add not in arr:
+                typeoffruit += 1
+            arr.append(to_add)
+            while typeoffruit > 2:
+                firstterm = arr.pop(0)
+                if firstterm not in arr:
+                    typeoffruit -=1
+            if typeoffruit == 2:
+                maxop = max(len(arr),maxop)
+            else:
+                maxop = len(arr)
+        return maxop
+                
