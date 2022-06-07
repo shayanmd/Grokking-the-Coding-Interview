@@ -1,0 +1,18 @@
+        arr = []
+        a = []
+        l=0
+        r=0
+        dist = 0
+        maxlength = -1
+        for r in s:
+            if r not in arr:
+                dist += 1
+            arr.append(r)
+            while dist > k:
+                firstterm = arr.pop(0)
+                if firstterm not in arr:
+                    dist -=1
+            #print(arr)
+            if dist == k:
+                maxlength = max(len(arr),maxlength)
+        return maxlength
